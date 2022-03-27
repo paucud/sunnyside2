@@ -1,0 +1,399 @@
+/* selektor * jest najsłabszy ale ma bardzo duży zasięg - resetuje najczęściej paddingi, marginesy, block size'y wszuystkich elementów na stronie */
+* {
+  margin: 0;
+  padding: 0;
+  /* określa sposób obliczania paddingów i borderów - nie rozpycha tak elementów przy powiększaniu paddingów */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Barlow;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: hsl(212, 27%, 19%);
+  font-family: Fraunces;
+}
+
+p {
+  color: hsl(212, 27%, 19%);
+}
+
+.btn {
+  color: hsl(212, 27%, 19%);
+  text-decoration: none;
+  font-family: Fraunces;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+/* MENU------------------------------------------------------------------------------------------------------------------- */
+.pageHeader {
+  position: absolute;
+  width: 100%;
+  padding-top: 40px;
+}
+
+.pageNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+}
+
+.navContainer a {
+  color: white;
+  text-decoration: none;
+}
+
+.navContainer li:last-child a 
+/* może być też li:nth-child(4)*/ {
+  text-transform: uppercase;
+  background-color: white;
+  color: hsl(212, 27%, 19%);
+  padding: 10px 15px;
+  border-radius: 30px;
+  font-family: Fraunces;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: 0.4s;
+}
+
+.navContainer li:last-child a:hover {
+  background-color: #6fcfff;
+  color: white;
+}
+
+.hamburgerBtn {
+  display: none;
+}
+
+/* BANNER----------------------------------------------------------------------------------------------------------------- */
+.pageBanner {
+  background-image: url("./images/desktop/image-header.jpg");
+  min-height: 800px;
+  /* background-size:contain; */
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  background-position: center; /*ustawia banner na środku mimo zmniejszania okna*/
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 150px;
+}
+
+.bannerTitle {
+  margin-top: 150px;
+  font-size: 54px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: white;
+}
+
+/* ABOUT------------------------------------------------------------------------------------------------------------------ */
+.pageAbout {
+  display: flex;
+  min-height: 650px;
+}
+.aboutLeft {
+  background-color: rgb(228, 225, 208);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutLeft .leftInfo {
+  width: 55%;
+}
+
+.leftInfo h3 {
+  font-size: 40px;
+}
+
+.leftInfo p {
+  margin: 35px 0px;
+  text-align: justify; /*wyjustowanie tekstu*/
+}
+
+.aboutRight {
+  background-image: url("./images/desktop/image-transform.jpg");
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+}
+
+.btnYellow {
+  position: relative;
+}
+
+.btnYellow::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(255, 225, 52);
+  height: 12px;
+  width: 100%;
+  z-index: 0;
+  bottom: -5px;
+  border-radius: 50px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.btnYellow:hover::before {
+  opacity: 1;
+}
+
+/* ABOUT2----------------------------------------------------------------------------------------------------------------- */
+.pageAbout2 {
+  display: flex;
+  min-height: 650px;
+}
+
+.aboutLeft2 {
+  background-image: url("./images/desktop/image-stand-out.jpg");
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+}
+
+.aboutRight2 .rightInfo2 {
+  width: 55%;
+}
+
+.rightInfo2 h3 {
+  font-size: 40px;
+}
+
+.rightInfo2 p {
+  margin: 35px 0px;
+  text-align: justify; /*wyjustowanie tekstu*/
+}
+
+.aboutRight2 {
+  background-color: rgb(228, 225, 208);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnPink {
+  position: relative;
+}
+
+.btnPink::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(216, 94, 94);
+  height: 12px;
+  width: 100%;
+  z-index: 0;
+  bottom: -5px;
+  border-radius: 50px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.btnPink:hover::before {
+  opacity: 1;
+}
+
+/* DESIGN----------------------------------------------------------------------------------------------------------------- */
+.pageDesign {
+  display: flex;
+  min-height: 650px;
+}
+
+.pageDesign .box 
+/* lub zapis .pageDesign > .box - używany gdy wskazujemy na bezpośredniego potomka*/ {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  background-position: top;
+  background-size: cover;
+  padding: 30px 50px;
+  text-align: center;
+}
+
+.pageDesign .box h4 {
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+
+.pageDesign .textBox {
+  min-height: 120px;
+}
+
+.designLeft {
+  background-image: url(./images/desktop/image-graphic-design.jpg);
+}
+
+.designRight {
+  background-image: url(./images/desktop/image-photography.jpg);
+}
+
+/* TESTIMONIALS------------------------------------------------------------------------------------------------------------ */
+.pageTestimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 0;
+}
+
+.pageTestimonials > h2 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 20px;
+  font-weight: 900;
+  color: hsl(210, 4%, 67%);
+  margin-bottom: 80px;
+}
+
+.testimonialsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.testimonial {
+  text-align: center;
+  width: 320px;
+}
+
+.testimonial > img {
+  width: 80px;
+  border-radius: 50%;
+  margin-bottom: 50px;
+}
+
+.testimonial > p {
+  margin-bottom: 60px;
+}
+
+/* GALLERY--------------------------------------------------------------------------------------------------------------- */
+.pageGallery {
+  display: flex;
+}
+
+.pageGallery > img {
+  width: 25%;
+}
+
+/* FOOTER---------------------------------------------------------------------------------------------------------------- */
+.pageFooter {
+  background-color: hsl(168, 27%, 68%);
+  padding-top: 70px;
+  text-align: center;
+}
+
+.pageFooter nav {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.pageFooter nav > a {
+  margin-right: 25px;
+  text-decoration: none;
+  color: hsl(168, 34%, 41%);
+  transition: color 0.4s;
+}
+
+.pageFooter nav > a:hover {
+  color: white;
+}
+
+.pageFooter .iconsBox {
+  padding-bottom: 40px;
+}
+
+.iconsBox img {
+  margin-right: 15px;
+}
+
+/* MEDIA--------------------------------------------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .pageNav {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navContainer {
+    display: none;
+  }
+  .hamburgerBtn {
+    display: block;
+  }
+  .pageBanner {
+    background-image: url("./images/mobile/image-header.jpg");
+    gap: 50px;
+  }
+  .bannerTitle {
+    text-align: center;
+    width: 85%;
+    font-size: 42px;
+    margin-top: 225px;
+  }
+  .testimonialsWrapper {
+    gap: 70px;
+  }
+  .pageDesign {
+    flex-direction: column;
+    min-height: 900px;
+  }
+  .pageAbout {
+    flex-direction: column-reverse;
+  }
+  .aboutRight,
+  .aboutLeft2 {
+    flex: initial;
+    height: 350px;
+  }
+  .aboutLeft,
+  .aboutRight2 {
+    padding: 30px 0px;
+  }
+  .aboutLeft .info,
+  .aboutRight2 .info {
+    width: 80%;
+  }
+  .pageAbout2 {
+    flex-direction: column;
+  }
+  .leftInfo p,
+  .leftInfo h3,
+  .rightInfo2 p,
+  .rightInfo2 h3 {
+    text-align: center;
+  }
+  .pageGallery {
+    flex-wrap: wrap;
+  }
+  .pageGallery img {
+    width: 50%;
+  }
+  .btn {
+    display: block;
+    text-align: center;
+  }
+}
